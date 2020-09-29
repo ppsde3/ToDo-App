@@ -1,0 +1,79 @@
+@mixin media($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin radio-colors() {
+  $colors: 'music' $event-violet, 'movie' $event-red, 'art' $event-blue,
+    'family' $event-yellow, 'meeting' $event-green, 'other' $grey--light;
+  @each $i in $colors {
+    &.#{nth($i, 1)} {
+      border-color: nth($i, 2);
+      color: nth($i, 2);
+    }
+  }
+}
+
+@mixin radio-colors-inverted() {
+  $colors: 'music' $event-violet, 'movie' $event-red, 'art' $event-blue,
+    'family' $event-yellow, 'meeting' $event-green, 'other' $grey--light;
+  @each $i in $colors {
+    &.#{nth($i, 1)} {
+      border-color: nth($i, 2);
+      background-color: nth($i, 2);
+      color: $bg-color;
+    }
+  }
+}
+
+@mixin flex($direction: null, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin border($border-color: null) {
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: $border-color;
+}
+
+@mixin icons() {
+  cursor: pointer;
+  color: $violet--dark;
+  font-size: 1.5rem;
+  &:hover {
+    color: $violet--light;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@mixin button() {
+  @include border($violet--dark);
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  text-align: center;
+  font-family: $font--main;
+  line-height: 1rem;
+  font-size: 1rem;
+  color: $violet--dark;
+  min-width: 100px;
+  padding: 0.5rem;
+  display: inline-block;
+  margin: 0 auto 1rem;
+  &:hover {
+    border-color: $violet--light;
+  }
+  &:active {
+    background-color: $violet--dark;
+    color: $bg-color;
+  }
+}

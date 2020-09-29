@@ -1,0 +1,45 @@
+@import '../utils/utils';
+
+.auth-form {
+  &__wrapper {
+    height: 100vh;
+    width: 100%;
+    @include flex(column, center, center);
+  }
+  &__title {
+    font-family: $font--main;
+    font-size: 1.8rem;
+    color: $violet--light;
+  }
+  &__form {
+    @include flex(column, space-evenly, center);
+    margin: 1rem auto;
+    text-align: left;
+  }
+  &__input {
+    line-height: 2rem;
+    padding: 0 0.5rem;
+    font-family: $font--secondary;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid $violet--light;
+    width: 12rem;
+    margin: 0.5rem auto;
+  }
+  &__buttons {
+    @include flex(column, space-evenly, center);
+    margin-top: 1.5rem;
+  }
+  &__btn {
+    @include button;
+  }
+  &__message {
+    color: $alert-red;
+    font-family: $font--secondary;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    width: 100%;
+    max-width: 11rem;
+    word-break: break-word;
+  }
+}

@@ -1,0 +1,73 @@
+@import '../utils/utils';
+
+.modal {
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    background-color: $bg-color--a;
+    @include flex($justify: center, $align: center);
+  }
+  &__window {
+    max-height: 56rem;
+    width: 30rem;
+    overflow-y: scroll;
+    background-color: $bg-color;
+    @include flex(column);
+    padding: 4.5rem 0 1rem;
+    position: relative;
+    @include border($grey--light);
+  }
+  &__header {
+    font-family: $font--main;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    width: 70%;
+    @include media($size-md) {
+      width: 80%;
+    }
+  }
+  &__body {
+    margin: 1rem auto;
+    width: 70%;
+    @include media($size-md) {
+      width: 80%;
+    }
+  }
+  &__iconBtn {
+    border: none;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: none;
+    font-size: 1.5rem;
+    &--close {
+      display: block;
+      position: absolute;
+      right: 1.5rem;
+      top: 1.25rem;
+    }
+  }
+  &__icon {
+    @include icons;
+  }
+}
+
+.modal-button--large {
+  @include button;
+  &:first-of-type {
+    margin-top: 2rem;
+  }
+  &:hover {
+    border-color: $violet--light;
+  }
+  &:active {
+    background-color: $violet--dark;
+    color: $bg-color;
+  }
+}
